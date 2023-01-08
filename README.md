@@ -5,6 +5,7 @@ It is a modified version of [MyOPL](https://github.com/davidcallanan/py-myopl-co
 The only difference is most commands begin with Jeff.
 
 ## Installation
+### Windows
 Download all files and place them into a folder. Then run MNJTerminal.bat to access the command line.
 
 ### macOS
