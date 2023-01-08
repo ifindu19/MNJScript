@@ -14,4 +14,5 @@ Type "python3 cli.py" and the terminal should start.
 Find it out yourself
 
 ## Extra notes
-As of now, MNJScript is in early alpha with version 0.0.3 being the 1st version. This means there are alot of bugs, and it will probably be hard to write any programs with this.
+As of now, MNJScript is in early alpha with version 0.0.3 being the 1st version. This means there are alot of bugs.
+I can verify it works both on Windows and macOS, with it being developed on macOS.
