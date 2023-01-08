@@ -1,7 +1,7 @@
 # MNJScript
 MNJScript/MNJ3 (stands for My Name Jeff) is an interpreter joke programming language. It is written in Python3 and modelled after BASIC.
 
-The only difference is mostly everything begins with JEFF.
+The only difference is most commands begin with Jeff.
 
 ## Installation
 Download all files and place them into a folder. Then run MNJTerminal.bat to access the command line.
