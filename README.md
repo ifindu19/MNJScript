@@ -6,7 +6,12 @@ The only difference is mostly everything begins with JEFF.
 ## Installation
 Download all files and place them into a folder. Then run MNJTerminal.bat to access the command line.
 
-If you are on macOS or any other OS, open the files in Visual Studio Code or something similar, then type "python3 cli.py" to access the terminal.
+### macOS
+Install python3 if you havent. Download all files and place them into a folder. Open the terminal and cd to the folder with the files.
+Type "python3 cli.py" and the terminal should start.
+
+### Linux
+Find it out yourself
 
 ## Extra notes
 As of now, MNJScript is in early alpha with version 0.0.3 being the 1st version. This means there are alot of bugs, and it will probably be hard to write any programs with this.
