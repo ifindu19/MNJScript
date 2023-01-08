@@ -1,6 +1,6 @@
 # MNJScript
-MNJScript/MNJ (stands for My Name Jeff) is an interpreter joke programming language. It is written in Python3 and modelled after BASIC.
-It is a modified version of [MyOPL](https://github.com/davidcallanan/py-myopl-code)
+MNJScript/MNJ (stands for My Name Jeff) is an interpreter joke programming language. It is written in Python and modelled after BASIC.
+It is a modified version of [MyOPL](https://github.com/davidcallanan/py-myopl-code), a template language also written in Python and modelled after BASIC.
 
 The only difference is most commands begin with Jeff.
 
