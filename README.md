@@ -16,3 +16,6 @@ Find it out yourself
 ## Extra notes
 As of now, MNJScript is in early alpha with version 0.0.3 being the 1st version. This means there are alot of bugs.
 I can verify it works both on Windows and macOS, with it being developed on macOS.
+
+### Future updates??????
+There will be future updates. I am planning to also make an installer and bug fixes.
