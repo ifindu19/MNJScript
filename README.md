@@ -5,6 +5,8 @@ It is also exactly like BASIC, with tokens and functions being pretty much the s
 The only difference is most commands begin with Jeff.
 
 ## Installation
+**Make sure the latest Python version is installed on your machine.**
+
 ### Windows
 Download all files and place them into a folder. Then run MNJTerminal.bat to access the command line.
 
