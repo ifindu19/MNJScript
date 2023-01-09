@@ -124,23 +124,23 @@ TT_NEWLINE		= 'NEWLINE'
 TT_EOF				= 'EOF'
 
 KEYWORDS = [
-  'JEFFVAR',
-  'JEFFAND',
-  'JEFFOR',
-  'JEFFNOT',
-  'JEFFIF',
-  'JEFFELIF',
-  'JEFFELSE',
-  'JEFF_FOR',
-  'JEFFTO',
-  'JEFFSTEP',
-  'JEFFWHILE',
-  'JEFFFUN',
-  'JEFFTHEN',
+  'VAR',
+  'AND',
+  'OR',
+  'NOT',
+  'IF',
+  'ELIF',
+  'ELSE',
+  'FOR',
+  'TO',
+  'STEP',
+  'WHILE',
+  'FUN',
+  'THEN',
   'END',
-  'JEFFRETURN',
-  'JEFFCONTINUE',
-  'JEFFBREAK',
+  'RETURN',
+  'CONTINUE',
+  'BREAK',
 ]
 
 class Token:
@@ -805,22 +805,22 @@ class Parser:
       if res.error: return res
       return res.success(list_expr)
     
-    elif tok.matches(TT_KEYWORD, 'JEFFIF'):
+    elif tok.matches(TT_KEYWORD, 'IF'):
       if_expr = res.register(self.if_expr())
       if res.error: return res
       return res.success(if_expr)
 
-    elif tok.matches(TT_KEYWORD, 'JEFF_FOR'):
+    elif tok.matches(TT_KEYWORD, 'FOR'):
       for_expr = res.register(self.for_expr())
       if res.error: return res
       return res.success(for_expr)
 
-    elif tok.matches(TT_KEYWORD, 'JEFFWHILE'):
+    elif tok.matches(TT_KEYWORD, 'WHILE'):
       while_expr = res.register(self.while_expr())
       if res.error: return res
       return res.success(while_expr)
 
-    elif tok.matches(TT_KEYWORD, 'JEFFFUN'):
+    elif tok.matches(TT_KEYWORD, 'FUN'):
       func_def = res.register(self.func_def())
       if res.error: return res
       return res.success(func_def)
@@ -989,7 +989,7 @@ class Parser:
   def for_expr(self):
     res = ParseResult()
 
-    if not self.current_tok.matches(TT_KEYWORD, 'JEFFFOR'):
+    if not self.current_tok.matches(TT_KEYWORD, 'FOR'):
       return res.failure(InvalidSyntaxError(
         self.current_tok.pos_start, self.current_tok.pos_end,
         f"Expected 'FOR'"
@@ -1020,7 +1020,7 @@ class Parser:
     start_value = res.register(self.expr())
     if res.error: return res
 
-    if not self.current_tok.matches(TT_KEYWORD, 'JEFFTO'):
+    if not self.current_tok.matches(TT_KEYWORD, 'TO'):
       return res.failure(InvalidSyntaxError(
         self.current_tok.pos_start, self.current_tok.pos_end,
         f"Expected 'TO'"
@@ -1032,7 +1032,7 @@ class Parser:
     end_value = res.register(self.expr())
     if res.error: return res
 
-    if self.current_tok.matches(TT_KEYWORD, 'JEFFSTEP'):
+    if self.current_tok.matches(TT_KEYWORD, 'STEP'):
       res.register_advancement()
       self.advance()
 
@@ -1041,7 +1041,7 @@ class Parser:
     else:
       step_value = None
 
-    if not self.current_tok.matches(TT_KEYWORD, 'JEFFTHEN'):
+    if not self.current_tok.matches(TT_KEYWORD, 'THEN'):
       return res.failure(InvalidSyntaxError(
         self.current_tok.pos_start, self.current_tok.pos_end,
         f"Expected 'THEN'"
@@ -1076,7 +1076,7 @@ class Parser:
   def while_expr(self):
     res = ParseResult()
 
-    if not self.current_tok.matches(TT_KEYWORD, 'JEFFWHILE'):
+    if not self.current_tok.matches(TT_KEYWORD, 'WHILE'):
       return res.failure(InvalidSyntaxError(
         self.current_tok.pos_start, self.current_tok.pos_end,
         f"Expected 'WHILE'"
@@ -1088,7 +1088,7 @@ class Parser:
     condition = res.register(self.expr())
     if res.error: return res
 
-    if not self.current_tok.matches(TT_KEYWORD, 'JEFFTHEN'):
+    if not self.current_tok.matches(TT_KEYWORD, 'THEN'):
       return res.failure(InvalidSyntaxError(
         self.current_tok.pos_start, self.current_tok.pos_end,
         f"Expected 'THEN'"
@@ -1123,7 +1123,7 @@ class Parser:
   def func_def(self):
     res = ParseResult()
 
-    if not self.current_tok.matches(TT_KEYWORD, 'JEFFFUN'):
+    if not self.current_tok.matches(TT_KEYWORD, 'FUN'):
       return res.failure(InvalidSyntaxError(
         self.current_tok.pos_start, self.current_tok.pos_end,
         f"Expected 'FUN'"
